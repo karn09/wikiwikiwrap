@@ -38,3 +38,9 @@ setup:
 	. .venv/bin/activate && \
 	pip install poetry && \
 	poetry install
+
+format:
+	ruff format .
+
+lint:
+	ruff check .
