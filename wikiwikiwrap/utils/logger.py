@@ -1,6 +1,7 @@
 import logging
 import sys
 
+
 def create_logger(location, level, format):
     """Create and configure a logger."""
     logger = logging.getLogger()
@@ -8,7 +9,7 @@ def create_logger(location, level, format):
     if logger.hasHandlers():
         return logger
 
-    if location == 'stdout':
+    if location == "stdout":
         handler = logging.StreamHandler(sys.stdout)
     else:
         handler = logging.FileHandler(location)
