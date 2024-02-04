@@ -1,6 +1,7 @@
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 
+
 # Rate limiting for the Wikipedia API
 def create_limiter(app, limiter_value):
     """Create and configure a rate limiter."""
