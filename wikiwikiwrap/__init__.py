@@ -17,13 +17,18 @@ def create_app():
     app = Flask(__name__)
     app.config.from_object(config)
 
-    # Initialize the rate limiter
-    create_limiter(app, app.config['LIMITER_VALUE'])
-
     # Configure logging
     create_logger(app.config['LOGGING_LOCATION'], app.config['LOGGING_LEVEL'], app.config['LOGGING_FORMAT'])
+    app.logger.info(f"Logging configured for {app.config['LOGGING_LOCATION']}")
+
+    # Initialize the rate limiter
+    create_limiter(app, app.config['LIMITER_VALUE'])
+    app.logger.info(f"Rate limiter initialized with value: {app.config['LIMITER_VALUE']}")
 
     # Register the Wikipedia API blueprint
     app.register_blueprint(wikipedia.bp)
 
+    app.logger.info("Wikipedia API blueprint registered")
+
+    app.logger.info(f"Application created with configuration: {app.config}")
     return app
