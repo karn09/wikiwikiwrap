@@ -9,7 +9,7 @@ build:
 
 # run tests
 test:
-	coverage run -m pytest
+	FLASK_ENV=testing coverage run -m pytest
 
 # run flask development server
 dev:
@@ -26,7 +26,7 @@ clean:
 
 # run tests and display coverage report
 coverage-run:
-	coverage run -m pytest; \
+	FLASK_ENV=testing coverage run -m pytest; \
 	coverage report -m
 
 # display coverage report
