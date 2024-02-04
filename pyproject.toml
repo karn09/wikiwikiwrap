@@ -1,0 +1,32 @@
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = ["error"]
+
+[tool.coverage.run]
+branch = true
+source = ["wikiwikiwrap", "tests"]
+
+[tool.ruff]
+
+[tool.poetry]
+name = "wikiwikiwrap"
+version = "0.1.0"
+description = "A simple wrapper for the Wikipedia API"
+authors = ["John Nieves <karn09@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+Flask = "^3.0.1"
+Flask-Limiter = "^3.5.0"
+requests = "^2.31.0"
+gunicorn = "^21.2.0"
+
+[tool.poetry.group.dev.dependencies]
+coverage = "^7.4.1"
+pytest = "^8.0.0"
+ruff = "^0.1.15"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
