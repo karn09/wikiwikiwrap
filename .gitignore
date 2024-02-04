@@ -1,0 +1,6 @@
+.venv
+*.log
+.coverage
+.ruff_cache
+.pytest_cache
+venv
