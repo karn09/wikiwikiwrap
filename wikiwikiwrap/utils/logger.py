@@ -1,11 +1,15 @@
 import logging
+import sys
 
 def create_logger(location, level, format):
     """Create and configure a logger."""
-    logger = logging.getLogger('wikiwikiwrap')
+    logger = logging.getLogger()
+
+    if logger.hasHandlers():
+        return logger
 
     if location == 'stdout':
-        handler = logging.StreamHandler(location)
+        handler = logging.StreamHandler(sys.stdout)
     else:
         handler = logging.FileHandler(location)
 
