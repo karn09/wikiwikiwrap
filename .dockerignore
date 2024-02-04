@@ -1,0 +1,9 @@
+.venv
+.git
+.gitignore
+.idea
+.ruff_cache
+*.log
+.coverage
+.pytest_cache
+venv
