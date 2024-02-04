@@ -22,6 +22,7 @@ def create_app():
     app.logger.info(f"Logging configured for {app.config['LOGGING_LOCATION']}")
 
     # Initialize the rate limiter
+    if not app.config['TESTING']:
         create_limiter(app, app.config['LIMITER_VALUE'])
         app.logger.info(f"Rate limiter initialized with value: {app.config['LIMITER_VALUE']}")
 
