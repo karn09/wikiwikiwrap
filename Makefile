@@ -1,7 +1,7 @@
 # variables
 IMAGE_NAME=wikiwikiwrap
 CONTAINER_NAME=wikiwikiwrap
-EXPOSED_PORT=5000
+EXPOSED_PORT=5100
 
 # build docker image
 build:
