@@ -55,3 +55,14 @@ To stop and remove the Docker container:
 ```
 make clean
 ```
+
+
+## Environment Variables
+
+The application uses the following environment variables for configuration:
+
+- `LOGGING_LEVEL`: The logging level for the application. Can be one of `DEBUG`, `INFO`, `WARNING`, `ERROR`, or `CRITICAL`. Defaults to `ERROR` in the production environment.
+
+- `RATELIMIT_DEFAULT`: The default rate limit for the application, in the format `<number> per <unit>`, where `<number>` is the number of requests and `<unit>` is a time unit like `second`, `minute`, `hour`, or `day`. For example, `200 per minute` means 200 requests are allowed per minute. Defaults to `200 per minute` in the production environment.
+
+- `STORAGE_URI`: The storage URI for the rate limiter. This should be a valid URL that points to the storage backend for the rate limiter. For example, `memory://` for an in-memory storage, `redis://localhost:6379` for a Redis backend. Defaults to `memory://` in the production environment, but should use redis in a real setup.
