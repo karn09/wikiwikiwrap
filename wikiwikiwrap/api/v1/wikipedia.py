@@ -3,6 +3,7 @@ import re
 import json
 import calendar
 from flask import Blueprint, jsonify, Response, request
+from wikiwikiwrap.utils.cache import cache
 
 bp = Blueprint("wikipedia", __name__)
 
@@ -22,6 +23,7 @@ def create_error_response(message, status_code):
 
 
 @bp.route("/views/<string:article>/<string:year>/<string:month>", methods=["GET"])
+@cache.cached(timeout=60)
 def get_views(article, year, month):
     """Get the number of views for a Wikipedia article."""
 
