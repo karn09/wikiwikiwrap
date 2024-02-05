@@ -8,13 +8,18 @@ ENV FLASK_ENV production
 # Set the working directory in the container to /app
 WORKDIR /app
 
-# Add the current directory contents into the container at /app
-ADD . /app
-
-# Install any needed packages specified in pyproject.toml
+# Install Poetry
 RUN pip install poetry
 RUN poetry config virtualenvs.create false
+
+# Copy only pyproject.toml and poetry.lock to cache dependencies
+COPY pyproject.toml poetry.lock ./
+
+# Install project dependencies
 RUN poetry install --no-dev
+
+# Add the current directory contents into the container at /app
+ADD . /app
 
 # Make port 5000 available to the world outside this container
 EXPOSE 5000
