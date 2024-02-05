@@ -56,6 +56,25 @@ To stop and remove the Docker container:
 make clean
 ```
 
+## Code Formatting and Linting
+
+To ensure that your code adheres to the project's style guidelines, you should run the code formatter and linter. This project uses ruff for both formatting and linting.
+
+### Running the Code Formatter
+To format your code, run the following command in your terminal:
+```
+make format
+```
+
+### Running the Linter
+
+To check your code for any linting errors, run the following command in your terminal:
+
+```
+make lint
+```
+
+This command will check your code and report any issues it finds. If any issues are found, you should fix them before committing your code.
 
 ## Environment Variables
 
