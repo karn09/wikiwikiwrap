@@ -58,4 +58,4 @@ class ProductionConfig(Config):
     )
 
     # Storage URI for the rate limiter
-    STORAGE_URI = get_env_variable_or_default("STORAGE_URI", "redis://localhost:6379")
+    STORAGE_URI = get_env_variable_or_default("STORAGE_URI", "memory://")
