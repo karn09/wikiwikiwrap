@@ -21,10 +21,10 @@ Flask = "^3.0.1"
 Flask-Limiter = {version = "^3.5.0", extras = ["redis"]}
 requests = "^2.31.0"
 gunicorn = "^21.2.0"
-vcrpy = "^6.0.1"
 flask-caching = "^2.1.0"
 
 [tool.poetry.group.dev.dependencies]
+vcrpy = "^6.0.1"
 coverage = "^7.4.1"
 pytest = "^8.0.0"
 ruff = "^0.1.15"
