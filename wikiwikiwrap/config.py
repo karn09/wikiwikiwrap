@@ -37,14 +37,21 @@ class Config(object):
     LOGGING_LEVEL = logging.DEBUG
     STORAGE_URI = "memory://"
     RATELIMIT_DEFAULT = "200 per minute"
+    CACHE_TYPE = "redis"
+    CACHE_REDIS_HOST = "localhost"
+    CACHE_REDIS_PORT = "6379"
+    CACHE_REDIS_DB = "0"
+    CACHE_REDIS_URL = "redis://localhost:6379"
 
 
 class DevelopmentConfig(Config):
     DEBUG = True
+    CACHE_TYPE = "SimpleCache"
 
 
 class TestingConfig(Config):
     TESTING = True
+    CACHE_TYPE = "SimpleCache"
 
 
 class ProductionConfig(Config):
