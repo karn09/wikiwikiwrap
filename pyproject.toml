@@ -22,6 +22,7 @@ Flask-Limiter = {version = "^3.5.0", extras = ["redis"]}
 requests = "^2.31.0"
 gunicorn = "^21.2.0"
 vcrpy = "^6.0.1"
+flask-caching = "^2.1.0"
 
 [tool.poetry.group.dev.dependencies]
 coverage = "^7.4.1"
