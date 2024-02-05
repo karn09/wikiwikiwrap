@@ -29,7 +29,7 @@ To run the Docker container:
 ```
 make run
 ```
-This will start a Docker container named `wikiwikiwrap` and expose it on port 5000.
+This will start a Docker container named `wikiwikiwrap` and expose it on port 5100.
 
 ## Running Tests
 
