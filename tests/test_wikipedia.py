@@ -43,7 +43,9 @@ def test_invalid_article_year(client):
         assert response.status_code == 400
         assert response.json["title"] == "Error"
         assert response.json["status"] == 400
-        assert response.json["detail"] == "Invalid year. Year should be a 4-digit number."
+        assert (
+            response.json["detail"] == "Invalid year. Year should be a 4-digit number."
+        )
         assert response.json["uri"] == "/views/Article/abcd/01"
 
 
