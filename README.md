@@ -1,6 +1,35 @@
 # WikiWikiWrap
 
-WikiWikiWrap is a Python project that acts an example of
+WikiWikiWrap is a Python project that acts an example of Flask app to wrap the Wikipedia views endpoint.
+
+## Calling the Wikipedia Views Endpoint
+
+The Wikipedia views endpoint allows you to get the number of views for a specific Wikipedia article for a given month and year.
+
+Here's how you can call this endpoint:
+
+1. Construct the URL for the endpoint. The URL should be in the following format:
+```
+http://<your-server-url>/views/<article>/<year>/<month>
+```
+
+Replace <your-server-url> with the URL of your server, <article> with the name of the Wikipedia article, <year> with the 4-digit year, and <month> with the 2-digit month.
+
+For example, to get the views for the "Python" article for January 2020, the URL would be:
+
+```
+http://<your-server-url>/views/Python/2020/01
+```
+
+2. Send a GET request to the constructed URL. You can do this using a tool like curl or Postman, or from your application code.
+
+Here's how to do it with `curl`:
+```
+curl http://<your-server-url>/views/Python/2020/01
+```
+
+The server will respond with a JSON object containing the views data. If there was an error, the server will respond with a JSON object containing an error message.
+
 
 ## Installation
 
