@@ -27,18 +27,16 @@ def create_app():
     )
 
     # Initialize the cache
-    if "TESTING" not in app.config or not app.config["TESTING"]:
-        init_cache(app).init_app(app)
-        app.logger.info(
-            f"Cache initialized with type: {app.config['CACHE_TYPE']} and location: {app.config['CACHE_REDIS_HOST']}:{app.config['CACHE_REDIS_PORT']}"
-        )
+    init_cache(app).init_app(app)
+    app.logger.info(
+        f"Cache initialized with type: {app.config['CACHE_TYPE']} and location: {app.config['CACHE_REDIS_HOST']}:{app.config['CACHE_REDIS_PORT']}"
+    )
 
     # Initialize the rate limiter
-    if "TESTING" not in app.config or not app.config["TESTING"]:
-        create_limiter(app)
-        app.logger.info(
-            f"Global Rate limiter initialized with value: {app.config['RATELIMIT_DEFAULT']}"
-        )
+    create_limiter(app)
+    app.logger.info(
+        f"Global Rate limiter initialized with value: {app.config['RATELIMIT_DEFAULT']}"
+    )
 
     # Import and register the Wikipedia API blueprint
     from .api.v1 import wikipedia
